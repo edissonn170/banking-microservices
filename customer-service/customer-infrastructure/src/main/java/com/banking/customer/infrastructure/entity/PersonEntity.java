@@ -23,10 +23,10 @@ public class PersonEntity {
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
-    @Column(name = "gender", length = 1)
+    @Column(name = "gender", nullable = false, length = 1)
     private String gender;
 
-    @Column(name = "age")
+    @Column(name = "age", nullable = false)
     private Integer age;
 
     @Column(name = "identification", nullable = false, unique = true, length = 20)

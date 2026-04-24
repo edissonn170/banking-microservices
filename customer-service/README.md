@@ -51,5 +51,12 @@ Swagger UI: `http://localhost:8081/swagger-ui.html`
 ## Tests
 
 ```bash
+# Todos los tests
 ./mvnw test
+
+# Prueba unitaria (CustomerService — customer-application)
+./mvnw test -pl customer-application -Dtest=CustomerServiceTest
+
+# Windows
+.\mvnw.cmd test -pl customer-application -Dtest=CustomerServiceTest
 ```

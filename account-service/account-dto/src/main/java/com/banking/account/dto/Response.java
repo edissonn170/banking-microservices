@@ -6,12 +6,8 @@ import lombok.Value;
 import lombok.extern.jackson.Jacksonized;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-/**
- * Generic response wrapper for API responses.
- *
- * @param <T> the type of data in the response
- */
 @Value
 @Builder
 @Jacksonized
@@ -21,6 +17,7 @@ public class Response<T> {
     int statusCode;
     String status;
     String message;
+    List<String> errors;
     T data;
     @Builder.Default
     LocalDateTime timestamp = LocalDateTime.now();
@@ -108,6 +105,15 @@ public class Response<T> {
                 .statusCode(400)
                 .status("Bad request")
                 .message(message)
+                .build();
+    }
+
+    public static <T> Response<T> validationError(List<String> errors) {
+        return Response.<T>builder()
+                .statusCode(400)
+                .status("Bad request")
+                .message("Validation failed")
+                .errors(errors)
                 .build();
     }
 

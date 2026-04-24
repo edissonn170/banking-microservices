@@ -120,6 +120,8 @@ public class CustomerService {
                     Person updatedPerson = Person.builder()
                             .personId(existingCustomer.getPerson().getPersonId())
                             .name(dto.getPerson().getName())
+                            .gender(dto.getPerson().getGender())
+                            .age(dto.getPerson().getAge())
                             .identification(newIdentification)
                             .address(dto.getPerson().getAddress())
                             .phone(dto.getPerson().getPhone())

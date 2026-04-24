@@ -18,10 +18,12 @@ public class PersonDto {
     @Size(max = 100, message = "Name must not exceed 100 characters")
     String name;
 
+    @NotNull(message = "Gender is required")
     @Pattern(regexp = "^(M|F)$", message = "Gender must be 'M' or 'F'")
     String gender;
 
-    @Min(value = 0, message = "Age must be a positive number")
+    @NotNull(message = "Age is required")
+    @Min(value = 16, message = "Age must be at least 16")
     @Max(value = 150, message = "Age must be a realistic value")
     Integer age;
 

@@ -63,5 +63,12 @@ Swagger UI: `http://localhost:8082/swagger-ui.html`
 ## Tests
 
 ```bash
+# Todos los tests
 ./mvnw test
+
+# Prueba de integración (AccountController — account-api)
+./mvnw test -pl account-api -Dtest=AccountControllerIntegrationTest
+
+# Windows
+.\mvnw.cmd test -pl account-api -Dtest=AccountControllerIntegrationTest
 ```
